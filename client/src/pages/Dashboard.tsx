@@ -100,47 +100,47 @@ export default function Dashboard() {
     timeouts.push(setTimeout(() => {
       setSimulationStep(1);
       updateAgent("data", "active", "Voltage instability detected (11.2V). Flagging anomaly.", 100);
-    }, 500));
+    }, 1000));
 
-    // Step 2: Diagnosis Agent analyzes (at 2s)
+    // Step 2: Diagnosis Agent analyzes (at 4s)
     timeouts.push(setTimeout(() => {
       updateAgent("data", "completed", "Anomaly flagged.", 100);
       updateAgent("diagnosis", "active", "Predicting component failure: Alternator (85% probability). Failure in 7 days.", 100);
-    }, 2500));
+    }, 4000));
 
-    // Step 3: Logistics Agent checks stock (at 4.5s)
+    // Step 3: Logistics Agent checks stock (at 8s)
     timeouts.push(setTimeout(() => {
       updateAgent("diagnosis", "completed", "RCA: Alternator Wear.", 100);
       updateAgent("logistics", "active", "Checking inventory... Part #ALT-992 out of stock. Ordering from Central Warehouse (ETA 48h).", 100);
       setSimulationStep(2);
-    }, 4500));
+    }, 8000));
 
-    // Step 4: Customer Voice Agent contacts user (at 7s)
+    // Step 4: Customer Voice Agent contacts user (at 12s)
     timeouts.push(setTimeout(() => {
       updateAgent("logistics", "completed", "Order Confirmed #ORD-7782", 100);
       updateAgent("voice", "active", "Initiating Call... 'Hi Rohan, detected potential failure. Slot available Sat 10 AM?'", 100);
-    }, 7000));
+    }, 12000));
 
-    // Step 5: Scheduling Agent books slot (at 9s)
+    // Step 5: Scheduling Agent books slot (at 16s)
     timeouts.push(setTimeout(() => {
       updateAgent("voice", "completed", "Customer approved.", 100);
       updateAgent("schedule", "active", "Booking Service Bay 4. Allocated mechanic: J. Doe.", 100);
       setSimulationStep(3);
-    }, 9000));
+    }, 16000));
 
-    // Step 6: Quality Insights (at 11s)
+    // Step 6: Quality Insights (at 20s)
     timeouts.push(setTimeout(() => {
       updateAgent("schedule", "completed", "Appointment Confirmed.", 100);
       updateAgent("quality", "active", "Submitting Defect Report to Factory Dashboard. Batch Q4-2024 flagged.", 100);
       setSimulationStep(4);
-    }, 11000));
+    }, 20000));
 
     // Finish
     timeouts.push(setTimeout(() => {
       updateAgent("quality", "completed", "Feedback Loop Closed.", 100);
       setIsRunning(false);
       toast.success("Proactive Maintenance Workflow Completed Successfully");
-    }, 13000));
+    }, 24000));
 
     return () => timeouts.forEach(clearTimeout);
   }, [isRunning]);

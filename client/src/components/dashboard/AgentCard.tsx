@@ -65,10 +65,10 @@ export function AgentCard({ name, role, icon: Icon, status, message, color, prog
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
-              className="mt-2 rounded bg-black/40 p-2 text-xs font-mono text-primary-foreground border border-white/5"
+              className="mt-2 rounded bg-black/60 p-2 text-xs font-mono text-white border border-white/10 shadow-sm"
             >
               <span className="text-neon-cyan mr-2">{">"}</span>
-              {message}
+              <span className="text-cyan-50">{message}</span>
             </motion.div>
           )}
 
