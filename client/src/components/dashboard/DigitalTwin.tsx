@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Activity, Battery, Zap, Gauge, AlertTriangle } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import generatedImage from "@assets/generated_images/futuristic_wireframe_car_schematic_for_digital_twin_dashboard.png";
+import generatedImage from "@assets/image_1764602623525.png";
 
 interface DigitalTwinProps {
   isSimulationRunning: boolean;
