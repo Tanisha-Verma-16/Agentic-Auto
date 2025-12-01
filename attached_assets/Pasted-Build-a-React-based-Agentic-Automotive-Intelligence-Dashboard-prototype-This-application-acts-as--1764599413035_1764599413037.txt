@@ -1,0 +1,47 @@
+Build a React-based "Agentic Automotive Intelligence" Dashboard prototype. This application acts as a simulation to showcase a 7-Agent workflow for proactive vehicle maintenance.
+
+**Tech Stack:** React, Tailwind CSS, Lucide-React (for icons), Framer Motion (for smooth animations).
+
+**Core Concept:**
+A single-page dashboard that visualizes a "Vehicle Digital Twin" (VDT). The system detects a failure, orders parts, books a service slot, and updates manufacturing—all autonomously via 7 specific AI agents.
+
+**The 7 Agents to Showcase (Must have distinct visual representations/icons):**
+1.  **Data Analysis Agent:** Monitors real-time sensor data.
+2.  **Diagnosis Agent:** Predicts component failure (e.g., Alternator).
+3.  **Logistics Agent:** Checks inventory & orders parts.
+4.  **Customer Voice Agent:** Simulates a call to the owner.
+5.  **Scheduling Agent:** Books the service center slot.
+6.  **Quality Insights Agent:** Sends feedback to the factory.
+7.  **UEBA Agent (Security):** "Always-on" monitoring of the other agents.
+
+**UI Layout & Features:**
+
+1.  **Left Panel: The Digital Twin (Visual)**
+    * Display a wireframe or stylized graphic of a car.
+    * Show live "Sensor Data" streaming (Speed, RPM, Battery Voltage, Engine Temp) with fluctuating numbers to look real.
+    * *Action:* When the simulation starts, the "Battery Voltage" should start fluctuating erratically to trigger the workflow.
+
+2.  **Center Panel: The Agent Orchestrator (The "Brain")**
+    * A central feed or timeline showing the "Master Agent" coordinating the 7 agents.
+    * As each agent activates, highlight it card-style with a progress bar and a status message.
+    * *Example:* "Diagnosis Agent: Simulating Digital Twin... Prediction: Alternator failure in 7 days (85% probability)."
+
+3.  **Right Panel: Service & Logistics View**
+    * **Inventory Status:** Shows "Checking Stock..." -> "Part Ordered (ETA 48hrs)".
+    * **Calendar:** A mini-calendar visual where the Scheduling Agent "blocks" a slot.
+    * **Manufacturing Feed:** A log showing the Quality Agent submitting an RCA report.
+
+4.  **Security Overlay (UEBA Agent)**
+    * A persistent "System Secure" badge in the corner.
+    * Randomly during the demo, show a small toast notification: "UEBA Agent: Blocked unauthorized data access attempt by external IP."
+
+**Interactive Demo Flow (Button: "Start Simulation"):**
+* **Step 1 (Predict):** Data Agent flags voltage drop. Diagnosis Agent alerts "Alternator Failing". Red warning on the Car graphic.
+* **Step 2 (Prepare):** Logistics Agent checks stock (Simulate "Out of Stock" -> "Ordered from Warehouse").
+* **Step 3 (Engage):** Customer Voice Agent pops up a chat bubble simulating a call: "Hi Rohan, potential failure detected. Slot available Sat 10 AM?" -> Auto-reply "Yes". Scheduling Agent confirms the slot on the calendar.
+* **Step 4 (Improve):** Quality Insights Agent generates a "Defect Report" sent to the Factory Dashboard.
+
+**Design Aesthetic:**
+* Dark Mode, Cyberpunk/Futuristic Dashboard style.
+* Use neon accents (Cyan for Data, Amber for Logistics, Green for Success, Red for Alerts).
+* Smooth transitions between steps so the user can follow the story.
